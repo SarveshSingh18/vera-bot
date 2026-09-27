@@ -1,4 +1,4 @@
-﻿fastapi==0.104.1
-uvicorn==0.24.0
-pydantic==2.4.2
-python-dotenv==1.0.0
+﻿fastapi==0.87.0
+uvicorn==0.20.0
+pydantic==1.10.2
+python-dotenv==0.21.0
