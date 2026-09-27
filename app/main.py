@@ -1,4 +1,4 @@
-﻿from fastapi import FastAPI, Request
+﻿from fastapi import FastAPI
 import time
 
 app = FastAPI()
@@ -13,15 +13,15 @@ async def metadata():
     return {"team_name": "Vera Bot Team", "version": "1.0.0"}
 
 @app.post("/v1/context")
-async def context(request: Request):
+async def context(body: dict):
     return {"accepted": True}
 
 @app.post("/v1/tick")
-async def tick(request: Request):
+async def tick(body: dict):
     return {"actions": []}
 
 @app.post("/v1/reply")
-async def reply(request: Request):
+async def reply(body: dict):
     return {"action": "wait"}
 
 @app.get("/")
