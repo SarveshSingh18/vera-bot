@@ -1,25 +1,19 @@
-﻿from fastapi import FastAPI
+from fastapi import FastAPI
 import time
-
 app = FastAPI()
-start = time.time()
-
+s = time.time()
 @app.get("/v1/healthz")
-def healthz():
-    return {"status": "ok", "uptime_seconds": int(time.time() - start)}
-
+def h():
+ return {"status":"ok","uptime_seconds":int(time.time()-s)}
 @app.get("/v1/metadata")
-def metadata():
-    return {"team_name": "Vera Bot"}
-
+def m():
+ return {"team_name":"Vera Bot"}
 @app.post("/v1/context")
-def context(body: dict):
-    return {"accepted": True}
-
+def c(b:dict):
+ return {"accepted":True}
 @app.post("/v1/tick")
-def tick(body: dict):
-    return {"actions": []}
-
+def t(b:dict):
+ return {"actions":[]}
 @app.post("/v1/reply")
-def reply(body: dict):
-    return {"action": "wait"}
+def r(b:dict):
+ return {"action":"wait"}
